@@ -1,8 +1,10 @@
 {
-  "name": "Andanada 12",
-  "short_name": "Andanada 12",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#d71920"
+  "name":"Andanada 12",
+  "short_name":"Andanada 12",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f6f8fc",
+  "theme_color":"#0b4ea2",
+  "description":"App privada para la cuadrilla Andanada 12",
+  "icons":[]
 }
