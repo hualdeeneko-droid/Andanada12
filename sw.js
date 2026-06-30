@@ -1,4 +1,4 @@
-const CACHE_NAME = 'andanada12-v14';
+const CACHE_NAME = 'andanada12-v15';
 const ASSETS = [
   './', './index.html', './manifest.json',
   './assets/icon-192.png', './assets/icon-512.png',
@@ -17,8 +17,8 @@ self.addEventListener('fetch', event => {
   const req = event.request;
   if (req.method !== 'GET') return;
   if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
-    event.respondWith(fetch(req).then(res => { const copy=res.clone(); caches.open(CACHE_NAME).then(c=>c.put(req,copy)); return res; }).catch(()=>caches.match(req).then(r=>r || caches.match('./index.html'))));
+    event.respondWith(fetch(req, {cache:'no-store'}).then(res => { const copy=res.clone(); caches.open(CACHE_NAME).then(c=>c.put(req,copy)); return res; }).catch(()=>caches.match(req).then(r=>r || caches.match('./index.html'))));
     return;
   }
-  event.respondWith(caches.match(req).then(cached => cached || fetch(req).then(res => { const copy=res.clone(); caches.open(CACHE_NAME).then(c=>c.put(req,copy)); return res; }).catch(()=>cached)));
+  event.respondWith(fetch(req).then(res => { const copy=res.clone(); caches.open(CACHE_NAME).then(c=>c.put(req,copy)); return res; }).catch(()=>caches.match(req)));
 });
