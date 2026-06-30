@@ -1,5 +1,5 @@
-const CACHE='andanada12-v12-20260630';
-self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./','./index.html','./manifest.json','./assets/emoticono.jpg','./assets/escudo-a12.svg']).catch(()=>{})))});
+const CACHE='andanada12-v12-corregida-20260630b';
+self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./','./index.html','./manifest.json','./assets/emoticono.jpg','./assets/escudo-bronce.jpg']).catch(()=>{})))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener('fetch',e=>{
   const req=e.request;
