@@ -1,4 +1,4 @@
-const CACHE_NAME = 'andanada12-v15';
+const CACHE_NAME = 'andanada12-v151';
 const ASSETS = [
   './', './index.html', './manifest.json',
   './assets/icon-192.png', './assets/icon-512.png',
